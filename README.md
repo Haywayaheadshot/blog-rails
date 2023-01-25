@@ -86,7 +86,7 @@ Give a ⭐️ if you like this project!
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 - I would like to thank Microverse
-- I would like to thank to the code reviewers for making I implement clean code
+- I would like to thank to the code reviewers for ensuring I implement clean code
 - I will like to thank my colleages [Diego Garcia](https://github.com/taldr27) and [Jose Zepada](https://github.com/J2ZROMERO) for always willing to lend a helping hand anytime I ask.
 
 ## 📝 License <a name="license"></a>
