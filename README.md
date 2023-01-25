@@ -50,8 +50,11 @@ In order to run this project you need:
 
 ### Setup
 ```
-- To clone the repository run this command - "git@github.com:taldr27/blog-app.git" OR "https://github.com/taldr27/blog-app.git"
+- To clone the repository run this command 
+- git clone https://github.com/Haywayaheadshot/blog-rails.git
 - cd blog-app
+- bundle install
+- rails server
 ```
 ## 👥 Authors <a name="authors"></a>
 
@@ -84,7 +87,7 @@ Give a ⭐️ if you like this project!
 
 - I would like to thank Microverse
 - I would like to thank to the code reviewers for making I implement clean code
-- I will like to thank my colleages [Diego Garcia]() and [Jose Zepada]() for always willing to lend a helping hand anytime I ask.
+- I will like to thank my colleages [Diego Garcia](https://github.com/taldr27) and [Jose Zepada](https://github.com/J2ZROMERO) for always willing to lend a helping hand anytime I ask.
 
 ## 📝 License <a name="license"></a>
 
