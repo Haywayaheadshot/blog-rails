@@ -56,7 +56,7 @@ In order to run this project you need:
 - bundle install
 - rails server
 ```
-## 👥 Authors <a name="authors"></a>
+## 👥 Author <a name="authors"></a>
 
 👤 **Abubakar Ummar**
 
