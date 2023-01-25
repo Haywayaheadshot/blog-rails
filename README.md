@@ -58,7 +58,7 @@ In order to run this project you need:
 ```
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Diego Garcia**
+👤 **Abubakar Ummar**
 
 - GitHub: [@Haywayaheadshot](https://github.com/Haywayaheadshot)
 - LinkedIn: [Abubakar Ummar](https://www.linkedin.com/in/abubakar-ummar/)
