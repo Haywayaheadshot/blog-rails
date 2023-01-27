@@ -34,4 +34,9 @@ RSpec.describe Post, type: :model do
     subject.likes_counter = 'String'
     expect(subject).to_not be_valid
   end
+
+  it 'posts counter should increases in 1' do
+    update_post = subject.update_posts_counter
+    expect(update_post.posts_counter).to eql 1
+  end
 end
