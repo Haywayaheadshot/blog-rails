@@ -69,7 +69,7 @@ In order to run this project you need:
 
 > These are some of the future features we want to add.
 
-- [ ] **[Workin on them]**
+- [ ] **[Add Controllers to the project]**
 
 ## 🤝 Contributing <a name="contributing"></a>
 
