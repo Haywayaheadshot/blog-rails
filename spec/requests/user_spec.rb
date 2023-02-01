@@ -15,7 +15,7 @@ RSpec.describe 'Users', type: :request do
     end
     it 'includes correct placeholder text in the response body' do
       get root_path
-      expect(response.body).to include('User Index HTML File')
+      expect(response.body).to include('User Name')
     end
   end
 
@@ -32,7 +32,7 @@ RSpec.describe 'Users', type: :request do
 
     it 'includes the Bio word in the response body' do
       get user_path(@user)
-      expect(response.body).to include('User show HTML file')
+      expect(response.body).to include('Number of posts: x')
     end
   end
 end

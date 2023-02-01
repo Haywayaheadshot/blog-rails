@@ -19,11 +19,11 @@ RSpec.describe 'Posts', type: :request do
       end
       it 'should render correct placeholder in index posts page' do
         get @route
-        expect(response.body.to_json).to include('Post Index HTML File')
+        expect(response.body.to_json).to include('Blog Website')
       end
       it 'should render correct placeholder in the page using assert_select' do
         get @route
-        assert_select 'h1', 'Post Index HTML File'
+        assert_select 'h3', '"Number of posts: x"'
       end
     end
   end
@@ -40,7 +40,7 @@ RSpec.describe 'Posts', type: :request do
 
     it 'includes the --Comment 1-- word in the response body' do
       get @show_route
-      expect(response.body).to include('Post show HTML File')
+      expect(response.body).to include('"commentSection"')
     end
   end
 end
