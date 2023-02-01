@@ -56,6 +56,24 @@ In order to run this project you need:
 - bundle install
 - rails server
 ```
+### Installation
+Install this project with:
+```
+- bundle install
+```
+
+### Usage
+To run the project, execute the following command:
+```
+- railser server
+```
+
+### Run tests
+To run tests, run the following command:
+```
+- rspec
+```
+
 ## 👥 Author <a name="authors"></a>
 
 👤 **Abubakar Ummar**
