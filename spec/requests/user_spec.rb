@@ -20,19 +20,19 @@ RSpec.describe 'Users', type: :request do
   end
 
   describe 'GET #show' do
-  it 'returns a successful response' do
-    get user_path(@user)
-    expect(response).to be_successful
-  end
+    it 'returns a successful response' do
+      get user_path(@user)
+      expect(response).to be_successful
+    end
 
-  it 'renders the show template' do
-    get '/user/:id(215)'
-    expect(response).to render_template(:show)
-  end
+    it 'renders the show template' do
+      get '/user/:id(215)'
+      expect(response).to render_template(:show)
+    end
 
-  it 'includes the Bio word in the response body' do
-    get user_path(@user)
-    expect(response.body).to include('User show HTML file')
+    it 'includes the Bio word in the response body' do
+      get user_path(@user)
+      expect(response.body).to include('User show HTML file')
+    end
   end
-end
 end
