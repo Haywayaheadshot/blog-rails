@@ -5,6 +5,7 @@ RSpec.describe 'Posts', type: :request do
     @user = User.create!(id: 4, name: 'Abubakar', posts_counter: 4)
     @post = Post.create!(id: 4, author_id: @user.id, title: 'Test', comments_counter: 4, likes_counter: 5)
     @route = '/user/:user_id/post'
+    @show_route = '/user/:user_id/post/:id'
   end
   describe 'GET /index' do
     describe 'Testing GET posts for an user #posts/index' do
@@ -27,19 +28,19 @@ RSpec.describe 'Posts', type: :request do
     end
   end
   describe 'GET #show' do
-  it 'returns a successful response' do
-    get '/user/:user_id/post/:id'
-    expect(response).to be_successful
-  end
+    it 'returns a successful response' do
+      get @show_route
+      expect(response).to be_successful
+    end
 
-  it 'renders the show template' do
-    get '/user/:user_id/post/:id/'
-    expect(response).to render_template('show')
-  end
+    it 'renders the show template' do
+      get @show_route
+      expect(response).to render_template('show')
+    end
 
-  it 'includes the --Comment 1-- word in the response body' do
-    get '/user/:user_id/post/:id/'
-    expect(response.body).to include('Post show HTML File')
+    it 'includes the --Comment 1-- word in the response body' do
+      get @show_route
+      expect(response.body).to include('Post show HTML File')
+    end
   end
-end
 end
