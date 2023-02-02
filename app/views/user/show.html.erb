@@ -1,57 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>"Blog Website"</title>
-    <%= stylesheet_link_tag 'user/show', media: 'all', 'data-turbolinks-track': 'reload' %>
-  </head>
-  <body>
-  
+
+<head>
+  <title>"Blog Website"</title>
+  <%= stylesheet_link_tag 'user/show' , media: 'all' , 'data-turbolinks-track' => 'reload' %>
+</head>
+
+<body>
+
   <div class="subParentContent">
-  <div class="contentIconName"> 
-  <div class="contentIcon">  <%= image_tag "icon.png", alt: "adadasda", class: "contentIcon" %>  
-  </div> 
-  <div class="contentNamePost">
-      <h2 class="name">"User Name"</h2>
-       <h3 class="numberPosts">"Number of posts: x"</h3> 
-      </div> 
-  </div>
-  <div class="bio"> <p class="InBio"> Bio  <br><br> 
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, 
-  veniam nam aut doloremque deleniti quo voluptatibus ullam 
-  velit repellat modi aliquid molestias a labore soluta ab tenetur reiciendis earum debitis.
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos doloribus quae officiis 
-  harum molestiae quos magni quasi
-  , omnis debitis? At harum omnis beatae officia reprehenderit, eos eligendi dolor perspiciatis nobis.
-  </p>
+    <% @user.tap do |user| %>
+    <div class="contentIconName">
+      <div class="contentIcon">
+        <%= image_tag "icon.png" , alt: "adadasda" , class: "contentIcon" %>
+      </div>
+      <div class="contentNamePost">
+        <h2 class="name"><%= user.name %></h2>
+        <h3 class="numberPosts">Number of posts: <%= user.posts_counter %></h3>
+      </div>
+    </div>
+    <div class="bio">
+      <p class="InBio"> Bio <br><br>
+        <%= user.bio %>
+      </p>
 
-  </div>
-  
-  <ul id="posts_li">
-  
-  <li id="p_item"> 
-      <h2 class="numPost">Post #1</h2>
-       <p class="textPost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure possimus dolorem ipsum excepturi modi rem sequi esse dolore, fuga laudantium laboriosam ut est, placeat ducimus deleniti deserunt? Sapiente, in aliquam? </p>
-  <h3 class="comLikesPost">Comments: x, Likes: y </h3>
+    </div>
+    <% end %>
+
+    <ul id="posts_li">
+      <% @user.latest_posts.each_with_index do |post, index| %>
+      <li id="p_item">
+        <h2 class="numPost">Post <%= (index + 1) %></h2>
+        <p class="textPost">
+          <%= post.text %>
+        </p>
+        <h3 class="comLikesPost">Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %> </h3>
       </li>
-  
-      <li id="p_item"> 
-      <h2 class="numPost">Post #2</h2>
-       <p class="textPost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure possimus dolorem ipsum excepturi modi rem sequi esse dolore, fuga laudantium laboriosam ut est, placeat ducimus deleniti deserunt? Sapiente, in aliquam? </p>
-  <h3 class="comLikesPost">Comments: x, Likes: y </h3>
-      </li>
-
-      <li id="p_item"> 
-      <h2 class="numPost">Post #3</h2>
-       <p class="textPost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure possimus dolorem ipsum excepturi modi rem sequi esse dolore, fuga laudantium laboriosam ut est, placeat ducimus deleniti deserunt? Sapiente, in aliquam? </p>
-  <h3 class="comLikesPost">Comments: x, Likes: y </h3>
-      </li>
-  </ul>
-  <button type="button" class="seeAllpostsButton">See all posts</button>
+      <% end %>
+    </ul>
+    <%= link_to "<button>See All Posts</button>".html_safe, :post => @user.posts, :class => 'seeAllpostsButton' %>
   </div>
   </div>
-
-      
-
-
-  </body>
+</body>
 </html>
