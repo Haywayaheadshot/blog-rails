@@ -8,47 +8,42 @@
   
   <div class="subParentContent">
   <div class="contentIconName"> 
-  <div class="contentIcon">  <%= image_tag "icon.png", alt: "adadasda", class: "contentIcon" %>  
-  </div> 
-  <div class="contentNamePost">
-      <h2 class="name">"User Name"</h2>
-       <h3 class="numberPosts">"Number of posts: x"</h3> 
-      </div> 
+    <div class="contentIcon">
+       <%= image_tag "icon.png", alt: "adadasda", class: "contentIcon" %>  
+    </div> 
+    <div class="contentNamePost">
+      <h2 class="name">
+        <%= @user.name %>
+      </h2>
+      <h3 class="numberPosts">
+        Number of posts: <%= @user.posts_counter %>
+      </h3> 
+    </div> 
   </div>
-
   <ul id="posts_li">
-  
-  <li id="p_item"> 
-    
-        <div class="postSection">  <h2 class="numPost">Post #1</h2>
-        <p class="textPost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure possimus dolorem ipsum excepturi modi rem sequi esse dolore, fuga laudantium laboriosam ut est, placeat ducimus deleniti deserunt? Sapiente, in aliquam? </p>
-        <h3 class="comLikesPost">Comments: x, Likes: y </h3>
+    <% @latest_posts.each_with_index do |post, index| %>
+    <li id="p_item"> 
+        <div class="postSection">  <h2 class="numPost">Post <%= index + 1 %> </h2>
+          <p class="textPost">
+            <%= post.text %>
+          </p>
+          <h3 class="comLikesPost">
+            Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>
+          </h3>
         </div>
-        <div class="commentSection"> 
-        <div class="commentByUser"><h2 class="userComment">Username: <h3 class="commentMessage"> Comment 1</h3> </h2> </div> 
-        <div class="commentByUser"><h2 class="userComment">Username: <h3 class="commentMessage"> Comment 2</h3> </h2> </div> 
-        <div class="commentByUser"><h2 class="userComment">Username: <h3 class="commentMessage"> Comment 3</h3> </h2> </div> 
-        <div class="commentByUser"><h2 class="userComment">Username: <h3 class="commentMessage"> Comment 4</h3> </h2> </div> 
-        <div class="commentByUser"><h2 class="userComment">Username: <h3 class="commentMessage"> Comment 5</h3> </h2> </div> 
+        <div class="commentSection">
+          <% @comments.each_with_index do |comment, index| %>
+          <% if comment.author_id == post.id %>
+          <div class="commentByUser">
+            <h2 class="userComment">Comment <%= index + 1 %>
+              <h3 class="commentMessage"><%= comment.text %> </h3>
+            </h2>
+          </div>
+          <% end %>
+          <% end %>
         </div>
-
-        <div class="postSection">  <h2 class="numPost">Post #2</h2>
-        <p class="textPost">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure possimus dolorem ipsum excepturi modi rem sequi esse dolore, fuga laudantium laboriosam ut est, placeat ducimus deleniti deserunt? Sapiente, in aliquam? </p>
-        <h3 class="comLikesPost">Comments: x, Likes: y </h3>
-        </div>
-        <div class="commentSection"> 
-        <div class="commentByUser"><h2 class="userComment">Username: <h3 class="commentMessage"> Comment 1</h3> </h2> </div> 
-        <div class="commentByUser"><h2 class="userComment">Username: <h3 class="commentMessage"> Comment 2</h3> </h2> </div> 
-        <div class="commentByUser"><h2 class="userComment">Username: <h3 class="commentMessage"> Comment 3</h3> </h2> </div> 
-        <div class="commentByUser"><h2 class="userComment">Username: <h3 class="commentMessage"> Comment 4</h3> </h2> </div> 
-        <div class="commentByUser"><h2 class="userComment">Username: <h3 class="commentMessage"> Comment 5</h3> </h2> </div> 
-        </div>
-
-        
-
-      </li>
-
-      
+    </li>
+    <% end %>
   </ul>
   <button type="button" class="seeAllpostsButton">Pagination</button>
   </div>
