@@ -2,79 +2,24 @@
 <html>
   <head>
     <title>"Blog Website"</title>
-    <%= stylesheet_link_tag 'user/index', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "user/index",
+    media: "all",
+    "data-turbolinks-track": "reload" %>
   </head>
   <body>
-  
-  <div class="subParentContent">
-  <div class="contentIconName"> 
-  <div class="contentIcon">  <%= image_tag "icon.png", alt: "adadasda", class: "contentIcon" %>  
-  </div> 
-  <div class="contentNamePost">
-      <h2 class="name">"User Name"</h2>
-       <h3 class="numberPosts">"Number of posts: x"</h3> 
-      </div> 
-  </div>
+
+    <div class="subParentContent">
+       <% @users.each do |user| %>
+      <div class="contentIconName">
+        <div class="contentIcon">
+          <%= image_tag "icon.png", alt: "adadasda", class: "contentIcon" %>
+        </div>
+        <div class="contentNamePost">
+          <h2 class="name"><%= user.name %></h2>
+          <h3 class="numberPosts">Number of posts: <%= user.posts_counter %></h3>
+        </div>
       </div>
-
-
-      
-  <div class="subParentContent">
-  <div class="contentIconName"> 
-  <div class="contentIcon">  <%= image_tag "icon.png", alt: "adadasda", class: "contentIcon" %>  
-  </div> 
-  <div class="contentNamePost">
-      <h2 class="name">"User Name"</h2>
-       <h3 class="numberPosts">"Number of posts: x"</h3> 
-      </div> 
-  </div>
-      </div>
-
-
-      <div class="subParentContent">
-  <div class="contentIconName"> 
-  <div class="contentIcon">  <%= image_tag "icon.png", alt: "adadasda", class: "contentIcon" %>  
-  </div> 
-  <div class="contentNamePost">
-      <h2 class="name">"User Name"</h2>
-       <h3 class="numberPosts">"Number of posts: x"</h3> 
-      </div> 
-  </div>
-      </div>
-
-
-      <div class="subParentContent">
-  <div class="contentIconName"> 
-  <div class="contentIcon">  <%= image_tag "icon.png", alt: "adadasda", class: "contentIcon" %>  
-  </div> 
-  <div class="contentNamePost">
-      <h2 class="name">"User Name"</h2>
-       <h3 class="numberPosts">"Number of posts: x"</h3> 
-      </div> 
-  </div>
-      </div>
-
-
-      <div class="subParentContent">
-  <div class="contentIconName"> 
-  <div class="contentIcon">  <%= image_tag "icon.png", alt: "adadasda", class: "contentIcon" %>  
-  </div> 
-  <div class="contentNamePost">
-      <h2 class="name">"User Name"</h2>
-       <h3 class="numberPosts">"Number of posts: x"</h3> 
-      </div> 
-  </div>
-      </div>
-
-      <div class="subParentContent">
-  <div class="contentIconName"> 
-  <div class="contentIcon">  <%= image_tag "icon.png", alt: "adadasda", class: "contentIcon" %>  
-  </div> 
-  <div class="contentNamePost">
-      <h2 class="name">"User Name"</h2>
-       <h3 class="numberPosts">"Number of posts: x"</h3> 
-      </div> 
-  </div>
-      </div>
+       <% end %>
+    </div>
   </body>
 </html>
