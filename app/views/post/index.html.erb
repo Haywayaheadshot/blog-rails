@@ -1,1 +1,56 @@
-<h1>Post Index HTML File</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>"Blog Website"</title>
+    <%= stylesheet_link_tag 'post/index', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+  
+  <div class="subParentContent">
+  <div class="contentIconName"> 
+    <div class="contentIcon">
+      <img src=<%= @user.photo %> alt:"User Display Image" class="contentIcon" />
+    </div> 
+    <div class="contentNamePost">
+      <h2 class="name">
+        <%= @user.name %>
+      </h2>
+      <h3 class="numberPosts">
+        Number of posts: <%= @user.posts_counter %>
+      </h3> 
+    </div> 
+  </div>
+  <ul id="posts_li">
+    <% @latest_posts.each_with_index do |post, index| %>
+    <li id="p_item"> 
+        <div class="postSection">  <h2 class="numPost">Post <%= index + 1 %> </h2>
+          <p class="textPost">
+            <%= post.text %>
+          </p>
+          <h3 class="comLikesPost">
+            Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>
+          </h3>
+        </div>
+        <div class="commentSection">
+          <% @comments.each_with_index do |comment, index| %>
+          <% if comment.author_id == post.id %>
+          <div class="commentByUser">
+            <h2 class="userComment">Comment <%= index + 1 %>
+              <h3 class="commentMessage"><%= comment.text %> </h3>
+            </h2>
+          </div>
+          <% end %>
+          <% end %>
+        </div>
+    </li>
+    <% end %>
+  </ul>
+  <button type="button" class="seeAllpostsButton">Pagination</button>
+  </div>
+  </div>
+
+      
+
+
+  </body>
+</html>

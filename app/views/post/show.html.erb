@@ -1,1 +1,31 @@
-<h1>Post show HTML File</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>"Mi sitio web"</title>
+    <%= stylesheet_link_tag 'post/show', media: 'all', 'data-turbolinks-track':
+    'reload' %>
+  </head>
+  <body>
+    <div class="postComment">
+      <div class="postSection">
+        <h2 class="numPost">Post <%= @post.id %></h2>
+        <h3 class="comLikesPost">Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></h3>
+        <p class="textPost">
+          <%= @post.text %>
+        </p>
+      </div>
+      <div class="commentSection">
+        <% @comments.each_with_index do |comment, index| %>
+        <% if comment.author_id == @post.id %>
+        <div class="commentByUser">
+          <h2 class="userComment">
+            Comment <%= index + 1 %>
+            <h3 class="commentMessage"><%= comment.text %></h3>
+          </h2>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </body>
+</html>

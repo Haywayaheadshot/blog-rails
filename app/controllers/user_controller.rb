@@ -1,7 +1,9 @@
 class UserController < ApplicationController
-  def index; end
+  def index
+    @users = User.all
+  end
 
   def show
-    @user = User.new(id: params[:id]) # object no proper of the database we use new instead of find
+    @user = User.find(params[:id])
   end
 end
