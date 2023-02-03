@@ -45,12 +45,15 @@
     </li>
     <% end %>
   </ul>
-  <button type="button" class="seeAllpostsButton">Pagination</button>
+  <%= form_with url: create_like_path, model: Like do |form| %>
+  <%= form.hidden_field :post_id, value: @post_id %>
+  <div>
+    <%= form.submit "Like post" %>
+  </div>
+  <% end %>
+  <%= link_to "<button>Add Comment</button>".html_safe, new_comment_url(@user), :class => 'seeAllpostsButton' %>
   </div>
   </div>
-
-      
-
-
+  </div>
   </body>
 </html>
