@@ -87,7 +87,8 @@ To run tests, run the following command:
 
 > These are some of the future features we want to add.
 
-- [ ] **[Add Controllers to the project]**
+- [ ] **[Add authorization rules to the database]**
+- [ ] **[Use an API endpoint]**
 
 ## 🤝 Contributing <a name="contributing"></a>
 
