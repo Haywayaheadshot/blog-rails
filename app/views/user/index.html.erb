@@ -10,15 +10,17 @@
 
     <div class="subParentContent">
        <% @users.each do |user| %>
+       <%= link_to user_path(user), :class => 'contentIconName' do %>
       <div class="contentIconName">
         <div class="contentIcon">
-          <%= image_tag "icon.png", alt: "adadasda", class: "contentIcon" %>
+          <img src=<%= user.photo %> alt:"User Display Image" class="contentIcon" />
         </div>
         <div class="contentNamePost">
           <h2 class="name"><%= user.name %></h2>
           <h3 class="numberPosts">Number of posts: <%= user.posts_counter %></h3>
         </div>
       </div>
+       <% end %>
        <% end %>
     </div>
   </body>
