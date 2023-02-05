@@ -1,0 +1,7 @@
+<%= form_with url: post_index_path, model: Post do |form| %>
+  <%= form.label :title, 'Add a title for your post: ' %><br>
+  <%= form.text_field :title, placeholder: 'Title:' %> <br>
+  <%= form.label :text, 'Add text to your post:' %><br>
+  <%= form.text_area :text, placeholder: 'Text' %><br>
+  <%= form.submit "Create Post"%>
+<% end %>

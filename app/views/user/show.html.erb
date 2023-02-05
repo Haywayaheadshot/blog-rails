@@ -38,7 +38,8 @@
       </li>
       <% end %>
     </ul>
-    <%= link_to "<button>See All Posts</button>".html_safe, :post => @user.posts, :class => 'seeAllpostsButton' %>
+    <%= link_to "<button>Add Post</button>".html_safe, add_post_path, :class => 'seeAllpostsButton' %>
+    <%= link_to "<button>See All Posts</button>".html_safe, show_posts_url(@user), :class => 'seeAllpostsButton' %>
   </div>
   </div>
 </body>

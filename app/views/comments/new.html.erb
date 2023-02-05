@@ -1,0 +1,11 @@
+<div>
+  <h2>Create a new comment</h2>
+  <%= form_with url: create_comment_path, model: Comment do |form| %>
+  <%= form.hidden_field :post_id, value: @post_id %>
+  <%= form.text_area :text, placeholder: 'Insert your Text here' %><br>
+  <%= form.submit "Add new comment" %>
+  <% end %>
+  <div>
+   <%= link_to "<button>Go Back</button>".html_safe, show_posts_path, :class => 'seeAllpostsButton' %>
+  </div>
+</div>
