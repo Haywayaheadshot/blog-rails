@@ -21,7 +21,7 @@
     </div> 
   </div>
   <ul id="posts_li">
-    <% @latest_posts.each_with_index do |post, index| %>
+    <% @user.posts.each_with_index do |post, index| %>
     <li id="p_item"> 
         <div class="postSection">  <h2 class="numPost">Post <%= index + 1 %> </h2>
           <p class="textPost">
@@ -32,7 +32,7 @@
           </h3>
         </div>
         <div class="commentSection">
-          <% @comments.each_with_index do |comment, index| %>
+          <% @user.comments.each_with_index do |comment, index| %>
           <% if comment.author_id == post.id %>
           <div class="commentByUser">
             <h2 class="userComment">Comment <%= index + 1 %>
