@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe UserController, type: :request do
   describe 'GET /index' do
-      @route = '/'
+    @route = '/'
     it 'returns http index success' do
       get @route
       expect(response).to have_http_status(:success)
