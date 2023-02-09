@@ -29,7 +29,7 @@ RSpec.describe PostController, type: :request do
     # end
     it 'ensures the body to include the correct placeholder text' do
       get '/user/1/post/1'
-      expect(response.body).to include('Number of posts')
+      expect(response.body).to include('Hello World')
     end
   end
 end
