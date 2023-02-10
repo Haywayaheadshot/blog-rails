@@ -65,7 +65,7 @@ Install this project with:
 ### Usage
 To run the project, execute the following command:
 ```
-- railser server
+- rails server
 ```
 
 ### Run tests
