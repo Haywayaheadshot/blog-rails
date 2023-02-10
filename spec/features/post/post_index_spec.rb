@@ -31,6 +31,7 @@ RSpec.describe 'Post index page', type: :feature do
         assert page.has_content?(@post_first.title)
       end
     end
+
     describe 'index' do
       it 'I can see some of the text body' do
         post_body = find('.textPost').text
@@ -38,11 +39,13 @@ RSpec.describe 'Post index page', type: :feature do
         expect(post_body).to have_content(@post_first.text)
       end
     end
+
     describe 'index' do
       it 'I can see the first comments on a post.' do
         expect(page).to have_content('This is the post one text')
       end
     end
+
     describe 'index' do
       it 'I can see how many comments on a post has.' do
         # wait for the answer of the test
