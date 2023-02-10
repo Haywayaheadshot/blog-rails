@@ -7,7 +7,7 @@
     "data-turbolinks-track": "reload" %>
   </head>
   <body>
-
+    <%= button_to "Log out", destroy_user_session_path, method: :delete, data: { turbo: false }  %>
     <div class="subParentContent">
        <% @users.each do |user| %>
        <%= link_to user_path(user), :class => 'contentIconName' do %>
