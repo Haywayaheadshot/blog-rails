@@ -71,7 +71,7 @@ To run the project, execute the following command:
 ### Run tests
 To run tests, run the following command:
 ```
-- rails spec:features
+- rspec spec/features
 ```
 
 ## 👥 Author <a name="authors"></a>
