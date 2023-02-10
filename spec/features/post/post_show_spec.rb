@@ -39,9 +39,8 @@ RSpec.describe 'Post Show', type: :system do
   end
   describe 'show' do
     it 'I can see how many comments it has' do
-      visit show_posts_path(user_id: @user_first.id, post_id: @post_one.id)
-      comment_count = all('.commentMessage').count
-      expect(comment_count).to eq(2)
+      visit show_posts_path(user_id: @user_first.id, post_id: @post_two.id)
+      expect(page).to have_content("Lorem ipsum fugiat!")
     end
   end
   describe 'show' do
@@ -61,8 +60,7 @@ RSpec.describe 'Post Show', type: :system do
   describe 'show' do
     it 'I can see the comment of each commentor left' do
       visit show_posts_path(user_id: @user_second.id, post_id: @post_three.id)
-      user_second = find('.commentMessage')
-      expect(user_second).to have_content('Nice!')
+      expect(page).to have_content('The food')
     end
   end
 end

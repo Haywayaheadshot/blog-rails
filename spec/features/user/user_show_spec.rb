@@ -78,6 +78,17 @@ RSpec.describe 'UserController', type: :system do
       assert page.has_content?('Post 1')
       assert page.has_content?('Post 2')
       assert page.has_content?('Post 3')
+      expect(page).to have_button('Pagination')
+    end
+  end
+
+  describe 'show' do
+    it 'When I click to see all posts, it redirects me to the users posts index page.' do
+      visit user_path(id: @user.id)
+      # check that the user's  post  is displayed on the show view
+      assert page.has_content?('Post 1')
+      assert page.has_content?('Post 2')
+      assert page.has_content?('Post 3')
       expect(page).to have_button('Add Post')
     end
   end

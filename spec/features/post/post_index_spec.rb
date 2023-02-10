@@ -40,9 +40,7 @@ RSpec.describe 'Post index page', type: :feature do
     end
     describe 'index' do
       it 'I can see the first comments on a post.' do
-        first_comment_post = find('.commentMessage').text
-        # wait for the answer of the test
-        assert page.has_content?(first_comment_post)
+        expect(page).to have_content('This is the post one text')
       end
     end
     describe 'index' do

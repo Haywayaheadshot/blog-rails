@@ -20,6 +20,7 @@ RSpec.describe 'User Index', type: :system do
       # Visit the index user path
       visit root_path
       assert page.has_content?(@user_two.name)
+      assert page.has_content?(@user_one.name)
     end
   end
 

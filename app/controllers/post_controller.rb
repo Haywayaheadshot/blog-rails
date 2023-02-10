@@ -15,9 +15,9 @@ class PostController < ApplicationController
   end
 
   def show
-    @post = Post.includes(:author).find(params[:user_id])
+    @post = Post.includes(:author).find(params[:post_id])
     @user = User.find(params[:user_id])
-    @comments = Comment.includes(:author).all
+    @comments = Comment.includes(:post).all
   end
 
   def post_params
