@@ -65,13 +65,13 @@ Install this project with:
 ### Usage
 To run the project, execute the following command:
 ```
-- railser server
+- rails server
 ```
 
 ### Run tests
 To run tests, run the following command:
 ```
-- rspec
+- rspec spec/features
 ```
 
 ## 👥 Author <a name="authors"></a>
@@ -80,6 +80,12 @@ To run tests, run the following command:
 
 - GitHub: [@Haywayaheadshot](https://github.com/Haywayaheadshot)
 - LinkedIn: [Abubakar Ummar](https://www.linkedin.com/in/abubakar-ummar/)
+
+👤 Ezema Anthony Sunday
+
+- GitHub: [@sonyco-4u](https://github.com/sonyco-4u)
+- Twitter: [@EZEMASUN](https://twitter.com/EZEMASUN)
+- LinkedIn: [ezema-anthony-sunday](https://www.linkedin.com/in/sunday-athony-ezema/)
 
 <!-- FUTURE FEATURES -->
 
