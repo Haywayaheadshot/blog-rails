@@ -40,7 +40,7 @@ RSpec.describe 'Post Show', type: :system do
   describe 'show' do
     it 'I can see how many comments it has' do
       visit show_posts_path(user_id: @user_first.id, post_id: @post_two.id)
-      expect(page).to have_content("Lorem ipsum fugiat!")
+      expect(page).to have_content('Lorem ipsum fugiat!')
     end
   end
   describe 'show' do
