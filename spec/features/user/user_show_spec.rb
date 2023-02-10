@@ -4,7 +4,7 @@ RSpec.describe 'UserController', type: :system do
   before(:each) do
     # Create users
     @user = User.create(name: 'Anthony', photo: 'https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=800',
-                        bio: 'Lorem ipsum dolor sit amet sss labore fugiat!.', posts_counter: 3)
+                        bio: 'Lorem ipsum dolor sit amet sss labore fugiat!.', posts_counter: 0)
     @first_post = Post.create(author_id: @user.id, title: 'The jungle', text: 'Lorem ipsum fugiat!', likes_counter: 1,
                               comments_counter: 1)
     @second_post = Post.create(author_id: @user.id, title: 'Rails is full of errors', text: 'Lorem ipsum fugiat!', likes_counter: 2,
@@ -38,7 +38,7 @@ RSpec.describe 'UserController', type: :system do
       visit root_path
       # assert that the number of post is present for each user.
 
-      assert page.has_content?('Number of posts:')
+      assert page.has_content?('Number of posts: 3')
     end
   end
 

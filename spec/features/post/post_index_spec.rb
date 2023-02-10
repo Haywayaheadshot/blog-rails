@@ -48,8 +48,7 @@ RSpec.describe 'Post index page', type: :feature do
     describe 'index' do
       it 'I can see how many comments on a post has.' do
         # wait for the answer of the test
-        comment_count = all('.commentMessage').count
-        expect(comment_count).to eq(1)
+        expect(page).to have_content('Comments: 1')
       end
     end
     describe 'index' do
