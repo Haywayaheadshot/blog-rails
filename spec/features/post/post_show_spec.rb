@@ -37,6 +37,7 @@ RSpec.describe 'Post Show', type: :system do
     visit show_posts_path(user_id: @user_first.id, post_id: @post_one.id)
     assert page.has_content?("Post #{@post_one.id} by #{@user_first.name}")
   end
+
   describe 'show' do
     it 'I can see how many comments it has' do
       visit show_posts_path(user_id: @user_first.id, post_id: @post_two.id)
@@ -50,6 +51,7 @@ RSpec.describe 'Post Show', type: :system do
       expect(likes).to have_content('Likes: 1')
     end
   end
+
   describe 'show' do
     it 'I can see the post body' do
       visit show_posts_path(user_id: @user_first.id, post_id: @post_one.id)
@@ -57,6 +59,7 @@ RSpec.describe 'Post Show', type: :system do
       expect(post_body).to have_content(@post_one.text)
     end
   end
+
   describe 'show' do
     it 'I can see the comment of each commentor left' do
       visit show_posts_path(user_id: @user_second.id, post_id: @post_three.id)
