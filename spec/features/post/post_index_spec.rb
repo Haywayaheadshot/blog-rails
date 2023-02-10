@@ -9,7 +9,7 @@ RSpec.describe 'Post index page', type: :feature do
       @post_first = Post.create(author_id: @user.id, title: 'Post', text: 'This is the post one text')
       @comment_first = Comment.create(post_id: @post_first.id, author_id: @user.id, text: 'This is the comment text')
 
-      visit index_posts_path(@user)
+      visit index_posts_path(:user_id => @user.id)
     end
     describe 'index' do
       it 'should show the user profile picture' do
