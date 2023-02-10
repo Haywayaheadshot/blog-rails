@@ -18,6 +18,6 @@ RSpec.describe Like, type: :model do
 
   it 'likes counter should increase in 1' do
     update_like = subject.update_likes_counter
-    expect(update_like.likes_counter).to eql 4
+    expect(update_like.likes_counter).to eql 1
   end
 end

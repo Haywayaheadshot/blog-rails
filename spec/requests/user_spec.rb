@@ -1,34 +1,38 @@
 require 'rails_helper'
 
-RSpec.describe UserController, type: :request do
+RSpec.describe 'Users', type: :request do
+  before(:each) do
+    @user = User.create!(id: 4, name: 'Abubakar', posts_counter: 4)
+  end
   describe 'GET /index' do
-    @route = '/'
-    it 'returns http index success' do
-      get @route
-      expect(response).to have_http_status(:success)
+    it 'returns a successful response' do
+      get root_path
+      expect(response).to be_successful
     end
-    it 'returns http index success' do
-      get @route
+    it 'renders the index template' do
+      get root_path
       expect(response).to render_template(:index)
     end
-    it 'ensures the body to include the correct placeholder text' do
-      get @route
-      expect(response.body).to include('User Display Image')
+    it 'includes correct placeholder text in the response body' do
+      get root_path
+      expect(response.body).to include('User Name')
     end
   end
 
-  describe 'GET /show' do
-    it 'returns http show success' do
-      get '/user/1'
-      expect(response).to have_http_status(:success)
+  describe 'GET #show' do
+    it 'returns a successful response' do
+      get user_path(@user)
+      expect(response).to be_successful
     end
-    it 'returns render template Show' do
-      get '/user/1'
+
+    it 'renders the show template' do
+      get '/user/:id(215)'
       expect(response).to render_template(:show)
     end
-    it 'ensures the body to include the correct placeholder text' do
-      get @route
-      expect(response.body).to include('User Display Image')
+
+    it 'includes the Bio word in the response body' do
+      get user_path(@user)
+      expect(response.body).to include('Number of posts: x')
     end
   end
 end

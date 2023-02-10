@@ -21,7 +21,7 @@
     </div> 
   </div>
   <ul id="posts_li">
-    <% @user.posts.each_with_index do |post, index| %>
+    <% @latest_posts.each_with_index do |post, index| %>
     <li id="p_item"> 
         <div class="postSection">  <h2 class="numPost">Post <%= index + 1 %> </h2>
           <p class="textPost">
@@ -32,7 +32,7 @@
           </h3>
         </div>
         <div class="commentSection">
-          <% @user.comments.each_with_index do |comment, index| %>
+          <% @comments.each_with_index do |comment, index| %>
           <% if comment.author_id == post.id %>
           <div class="commentByUser">
             <h2 class="userComment">Comment <%= index + 1 %>
@@ -42,16 +42,16 @@
           <% end %>
           <% end %>
         </div>
-        <%= form_with url: create_like_path, model: Like do |form| %>
-        <%= form.hidden_field :post_id, value: @post_id %>
-        <div>
-          <%= form.submit "Like post" %>
-        </div>
-        <% end %>
-        <%= link_to "<button>Add Comment</button>".html_safe, new_comment_url(@user), :class => 'seeAllpostsButton' %>
     </li>
     <% end %>
   </ul>
+  <%= form_with url: create_like_path, model: Like do |form| %>
+  <%= form.hidden_field :post_id, value: @post_id %>
+  <div>
+    <%= form.submit "Like post" %>
+  </div>
+  <% end %>
+  <%= link_to "<button>Add Comment</button>".html_safe, new_comment_url(@user), :class => 'seeAllpostsButton' %>
   </div>
   </div>
   </div>

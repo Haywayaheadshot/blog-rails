@@ -8,8 +8,7 @@
   <body>
     <div class="postComment">
       <div class="postSection">
-        <h1 class="numPost">Post <%= @post.id %> by <%= @post.author.name %></h1>
-        <h2 class="numPost">Title: <%= @post.title %></h2>
+        <h2 class="numPost">Post <%= @post.id %></h2>
         <h3 class="comLikesPost">Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></h3>
         <p class="textPost">
           <%= @post.text %>
