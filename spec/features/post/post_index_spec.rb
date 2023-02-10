@@ -4,9 +4,10 @@ RSpec.describe 'Post index page', type: :feature do
   describe 'Post index page process' do
     before(:each) do
       @user = User.create(name: 'Abubakar',
-                          photo: 'https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=800', bio: 'This is the user bio')
-      @post_1 = Post.create(author_id: @user.id, title: 'Post', text: 'This is the post one text')
-      @comment_1 = Comment.create(post_id: @post_1.id, author_id: @user.id, text: 'This is the comment text')
+                          photo: 'https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=800',
+                          bio: 'This is the user bio')
+      @post_first = Post.create(author_id: @user.id, title: 'Post', text: 'This is the post one text')
+      @comment_first = Comment.create(post_id: @post_first.id, author_id: @user.id, text: 'This is the comment text')
 
       visit index_posts_path(@user)
     end
@@ -27,14 +28,14 @@ RSpec.describe 'Post index page', type: :feature do
     end
     describe 'index' do
       it 'I can see the a posts title' do
-        assert page.has_content?(@post_1.title)
+        assert page.has_content?(@post_first.title)
       end
     end
     describe 'index' do
       it 'I can see some of the text body' do
         post_body = find('.textPost').text
         # wait for the answer of the test
-        expect(post_body).to have_content(@post_1.text)
+        expect(post_body).to have_content(@post_first.text)
       end
     end
     describe 'index' do
