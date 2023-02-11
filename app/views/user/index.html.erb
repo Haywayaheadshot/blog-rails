@@ -7,13 +7,12 @@
     "data-turbolinks-track": "reload" %>
   </head>
   <body>
-    <%= button_to "Log out", destroy_user_session_path, method: :delete, data: { turbo: false }  %>
     <div class="subParentContent">
        <% @users.each do |user| %>
        <%= link_to user_path(user), :class => 'contentIconName' do %>
       <div class="contentIconName">
         <div class="contentIcon">
-          <img src=<%= user.photo %> alt:"User Display Image" class="contentIcon" />
+          <img src="<%= url_for(user.photo) %>" alt="User Display Image" class="contentIcon" />
         </div>
         <div class="contentNamePost">
           <h2 class="name"><%= user.name %></h2>

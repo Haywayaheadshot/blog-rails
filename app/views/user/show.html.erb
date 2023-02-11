@@ -7,12 +7,11 @@
 </head>
 
 <body>
-
   <div class="subParentContent">
     <% @user.tap do |user| %>
     <div class="contentIconName">
       <div class="contentIcon">
-        <img src=<%= user.photo %> alt:"User Display Image" class="contentIcon" />
+        <img src="<%= url_for(user.photo) %>" alt="User Display Image" class="contentIcon" />
       </div>
       <div class="contentNamePost">
         <h2 class="name"><%= user.name %></h2>

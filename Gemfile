@@ -84,3 +84,9 @@ gem 'devise'
 
 # To handle sending emails locally
 gem 'letter_opener'
+
+# # To handle images exported from local device
+# gem 'carrierwave', '~> 2.0'
+
+# To handle authorizations
+gem 'cancancan'
