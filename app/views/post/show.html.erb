@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>"Mi sitio web"</title>
+    <title>"Blog Website"</title>
     <%= stylesheet_link_tag 'post/show', media: 'all', 'data-turbolinks-track':
     'reload' %>
   </head>
@@ -14,6 +14,7 @@
         <p class="textPost">
           <%= @post.text %>
         </p>
+        <button>Delete Post</button>
       </div>
       <div class="commentSection">
         <% @comments.each_with_index do |comment, index| %>
@@ -24,6 +25,9 @@
             <h3 class="commentMessage"><%= comment.text %></h3>
           </h2>
         </div>
+        <% end %>
+        <% if can? :destroy,comment %>
+        <%= button_to "Delete Comment", comment_path(comment.id), method: :delete, data: { turbo: false }, :class => 'auth-btns'  %>
         <% end %>
         <% end %>
       </div>

@@ -48,7 +48,7 @@
           <%= form.submit "Like post" %>
         </div>
         <% end %>
-        <%= link_to "<button>Add Comment</button>".html_safe, new_comment_url(@user), :class => 'seeAllpostsButton' %>
+        <%= link_to "<button>Add Comment</button>".html_safe, new_comment_path, :class => 'seeAllpostsButton' %>
     </li>
     <% end %>
   </ul>

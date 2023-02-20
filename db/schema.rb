@@ -77,6 +77,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_10_231016) do
     t.string "photo", default: "https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=800"
     t.text "bio"
     t.integer "posts_counter", default: 0
+    t.string "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false

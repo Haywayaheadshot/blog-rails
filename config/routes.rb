@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/user/:user_id/post/:post_id', to: 'post#show', as: 'show_posts'
   get '/post/new', to: 'post#new',as: 'add_post'
   get '/user/:user_id/post/:user_id/comments/new', to: 'comments#new', as: 'new_comment'
+  # get '/user/:user_id/post/:post_id/comments', to: 'comments#destroy', as: 'destroy_comment'
   post '/user/:user_id/post/:user_id/comments', to: 'comments#create', as: 'create_comment'
   post '/user/:user_id/post/:user_id/likes', to: 'likes#create', as: 'create_like'
   post '/post', to: 'post#create', as: 'create_post'
@@ -16,6 +17,8 @@ Rails.application.routes.draw do
   resources :user,only: [:show] do 
     resources :post, only: [:index, :show]
   end
+
+  resources :comments, only: [:destroy]
 
   resources :post, only: [:new, :create]
 end

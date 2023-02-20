@@ -11,6 +11,13 @@
   </head>
 
   <body>
+    <% if !user_signed_in? %>
+  <style>
+    .auth-btns {
+      display: none;
+    }
+  </style>
+<% end %>
     <%= render "shared/logout" %>
     <%= yield %>
     <!-- This is an action to alert the user for login/signed in and log out messages -->
